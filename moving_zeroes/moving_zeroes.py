@@ -15,7 +15,7 @@ def moving_zeroes(arr):
     for i in range(len(arr)): 
         if arr[i] != 0: 
               
-            # here count is incremented 
+            # here count is incremented when element is not 0 
             arr[count] = arr[i] 
             count+=1
       

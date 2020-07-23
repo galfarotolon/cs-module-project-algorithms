@@ -5,7 +5,16 @@ Returns: an integer
 def single_number(arr):
     # Your code here
 
-    pass
+
+    single = arr[0] 
+      
+    # # Do XOR of all elements and return 
+    for i in range(1,len(arr)): 
+        single = single ^ arr[i] 
+      
+    return single
+
+
 
 
 if __name__ == '__main__':
