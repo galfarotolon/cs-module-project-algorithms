@@ -6,23 +6,25 @@ def moving_zeroes(arr):
     # Your code here
 
 
-    count = 0 # Count of non-zero elements 
+    count = 0 # Count how many non-zero elements 
       
-    # Traverse the array. If element  
-    # encountered is non-zero, then 
-    # replace the element at index 
-    # 'count' with this element 
+    # Traverse the array. If element encountered is non-zero, then 
+    # replace the element at index 'count' with this element 
     for i in range(len(arr)): 
         if arr[i] != 0: 
               
             # here count is incremented when element is not 0 
+
+            # if the element is not 0, it stays at its original position, then increase count to traverse to next element
+            # even if there is a 0 between the elements, it will set the non-zero element to take the place of the zero element index
             arr[count] = arr[i] 
             count+=1
       
     # Now all non-zero elements have been 
-    # shifted to front and 'count' is set 
-    # as index of first 0. Make all  
-    # elements 0 from count to end. 
+    # shifted to front
+    # check length of array, as long as 
+    # count is smaller, it means  that the leftovers or the difference
+    # will be filled with 0 until the end of the array
     while count < len(arr): 
         arr[count] = 0
         count += 1

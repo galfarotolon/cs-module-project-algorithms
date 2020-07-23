@@ -2,15 +2,54 @@
 Input: a List of integers
 Returns: a List of integers
 '''
+
+# Psuedocode
+# define new array
+# for i in range(len(array))
+    # define product as 1
+    # for j in range(len(array))
+        # if i != j
+            # product *= array[j]
+    # new array.append(product)
+# return new array
+
 def product_of_all_other_numbers(arr):
+
+    # make a new array that contains the product
+    # of all elements in the array except i
+
+#  A brute force approach: would use two loops to multiply the integer at every index by the integer at every nestedIndex, 
+# unless index == nestedIndex.
+
+# This would give us a runtime of O(n^2)
+
+    # this will be the list to hold final values 
     product_array = []
+
+    #loop through original array
     for i in range(len(arr)):
+        # start the variable to hold the product of all
+        # numbers except the number itself
+
+        # this value gets restarted every time the loop begins
         product = 1
+
+        # for each number in the original array,
+
         for j in range(len(arr)):
+
+            #if j is different from the current number, 
+            # then multiply it by the product, else ignore
+
             if i != j:
+                # if they are not, multiply all elements except that value and store it in the new array in its original index
                 product *= arr[j]
+        
+        # add product to the product array
         product_array.append(product)
     return product_array
+
+
 
 
 if __name__ == '__main__':
